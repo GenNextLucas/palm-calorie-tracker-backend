@@ -1,0 +1,13 @@
+-- CreateTable
+CREATE TABLE `Food` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(191) NOT NULL,
+    `calories` INTEGER NOT NULL,
+    `protein` DOUBLE NOT NULL DEFAULT 0,
+    `carbs` DOUBLE NOT NULL DEFAULT 0,
+    `fat` DOUBLE NOT NULL DEFAULT 0,
+    `refVal` DOUBLE NOT NULL,
+    `uom` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

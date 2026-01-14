@@ -1,0 +1,78 @@
+### Create a New Food
+POST http://localhost:3000/api/foods
+Content-Type: application/json
+
+{
+  "name": "Peito de Frango",
+  "calories": 119,
+  "protein": 21.46,
+  "carbs": 0,
+  "fat": 3.01,
+  "refVal": 100,
+  "uom": "g"
+}
+
+###
+
+### Get all foods
+GET http://localhost:3000/api/foods
+Content-Type: application/json
+
+
+###
+
+### Create multiple foods
+POST http://localhost:3000/api/foods/multiple-save
+Content-Type: application/json
+
+[
+  {
+    "name": "Coxa e Sobrecoxa",
+    "calories": 137,
+    "protein": 17.5,
+    "carbs": 0,
+    "fat": 7.5,
+    "refVal": 100,
+    "uom": "g"
+  },
+
+  {
+    "name": "asa de frango",
+    "calories": 137,
+    "protein": 17.5,
+    "carbs": 0,
+    "fat": 7.5,
+    "refVal": 100,
+    "uom": "g"
+  },
+
+  {
+    "name": "Pao Frances",
+    "calories": 277,
+    "protein": 8.6,
+    "carbs": 50.2,
+    "fat": 4.3,
+    "refVal": 100,
+    "uom": "g"
+  },
+
+  {
+    "name": "Arroz Branco",
+    "calories": 130,
+    "protein": 3,
+    "carbs": 40,
+    "fat": 0,
+    "refVal": 100,
+    "uom": "g"
+  },
+
+  {
+    "name": "Batata Doce Cozida",
+    "calories": 75,
+    "protein": 1.4,
+    "carbs": 17.7,
+    "fat": 0.1,
+    "refVal": 100,
+    "uom": "g"
+  }
+]

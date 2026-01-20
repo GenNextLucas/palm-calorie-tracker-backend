@@ -66,9 +66,9 @@ export class FoodController {
         }
     
         try {
-            await foodService.deleteFood(id);
+            const food = await foodService.deleteFood(id);
             // 200 OK or 204 No Content
-            res.status(200).json({ message: "Food deleted successfully" });
+            res.status(200).json({ message: `the food ${food.name} was deleted successfully` });
         } catch (error: any) {
             // This catches the 'ID not found' error from your Service
             res.status(404).json({ message: error.message });

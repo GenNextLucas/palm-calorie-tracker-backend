@@ -8,5 +8,6 @@ router.post("/", foodController.handleCreateFood);
 router.post("/multiple-save", foodController.handleCreateManyFoods);
 router.put("/", foodController.handleUpdateFood);
 router.get("/", foodController.handleGetFoods);
+router.delete("/:id", foodController.handleDeleteFood);
 
 export default router;

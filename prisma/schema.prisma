@@ -13,13 +13,35 @@ datasource db {
 }
 
 model Food {
-  id       Int     @id @default(autoincrement())
+  id       Int        @id @default(autoincrement())
   name     String
   calories Int
-  protein  Float   @default(0)
-  carbs    Float   @default(0)
-  fat      Float   @default(0)
+  protein  Float      @default(0)
+  carbs    Float      @default(0)
+  fat      Float      @default(0)
   refVal   Float
   uom      String
-  active   Boolean @default(true)
+  active   Boolean    @default(true)
+  MealItem MealItem[]
+}
+
+model Meal {
+  id        Int        @id @default(autoincrement())
+  name      String // e.g., "Breakfast"
+  createdAt DateTime   @default(now())
+  items     MealItem[]
+}
+
+model MealItem {
+  id       Int    @id @default(autoincrement())
+  calories Int
+  carbs    Float
+  protein  Float
+  fat      Float
+  quantity Float
+  unit     String
+  foodId   Int // The foreign key
+  food     Food   @relation(fields: [foodId], references: [id])
+  mealId   Int
+  meal     Meal   @relation(fields: [mealId], references: [id])
 }

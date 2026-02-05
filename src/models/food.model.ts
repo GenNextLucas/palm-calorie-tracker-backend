@@ -7,6 +7,7 @@ export class FoodDTO {
     fat: number;
     refVal: number;
     uom: string;
+    quantity: number;
 
 
     constructor(data: Partial<FoodDTO>) {
@@ -16,8 +17,9 @@ export class FoodDTO {
         this.protein = data.protein || 0;
         this.carbs = data.carbs || 0;
         this.fat = data.fat || 0;
-        this.refVal = data.refVal || 100; // Defaulting to 100g as seen in your UI
+        this.refVal = data.refVal || 100;
         this.uom = data.uom || 'g';
+        this.quantity = data.quantity || 0;
     }
 
 }

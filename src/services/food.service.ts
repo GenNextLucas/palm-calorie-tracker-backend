@@ -14,7 +14,7 @@ export class FoodService {
                active: true
             },
             orderBy: {
-                id: 'desc'
+                name: 'asc'
             }
         });
     }

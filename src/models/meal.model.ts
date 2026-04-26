@@ -15,4 +15,9 @@ export class MealDTO {
             : [];
     }
 
+    // Or as a getter inside your MealDTO class:
+    get foodNamesList(): string[] {
+        return this.items.map(item => item.name);
+    }
+
 }

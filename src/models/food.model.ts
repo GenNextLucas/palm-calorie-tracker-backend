@@ -7,11 +7,13 @@ export class FoodDTO {
     fat: number;
     refVal: number;
     uom: string;
-    quantity: number;
+    quantity?: number;
 
 
     constructor(data: Partial<FoodDTO>) {
-        this.id = data.id || 0;
+        if (data.id !== undefined)
+            this.id = data.id;
+
         this.name = data.name || '';
         this.calories = data.calories || 0;
         this.protein = data.protein || 0;
@@ -19,7 +21,9 @@ export class FoodDTO {
         this.fat = data.fat || 0;
         this.refVal = data.refVal || 100;
         this.uom = data.uom || 'g';
-        this.quantity = data.quantity || 0;
+        
+        if (data.quantity !== undefined)
+            this.quantity = data.quantity;
     }
 
 }

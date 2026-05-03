@@ -18,6 +18,18 @@ export class MealDetailDTO {
     }
 
     static fromRawItems(id: number, name: string, items: any[], itemNames: any[]): MealDetailDTO {
+      if (!items || items.length === 0) {
+        return new MealDetailDTO({
+            id,
+            name,
+            foodItems: itemNames,
+            calories: 0,
+            fat: 0,
+            protein: 0,
+            carbs: 0,
+        });
+      }
+      
         return new MealDetailDTO({
           id,
           name,
